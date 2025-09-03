@@ -10,6 +10,9 @@ resource "aws_instance" "one" {
   key_name               = "Auto"
   vpc_security_group_ids = ["sg-07ede7518dd4357a0"]
   subnet_id              = "subnet-03bc7422d699ff7b4"
+
+  associate_public_ip_address = true   # 👈 Force public IP
+
   tags = {
     Name = var.instance_names[count.index]
   }
