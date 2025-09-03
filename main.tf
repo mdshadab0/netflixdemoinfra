@@ -9,6 +9,7 @@ resource "aws_instance" "one" {
   instance_type          = "t2.medium"
   key_name               = "Auto"
   vpc_security_group_ids = ["sg-07ede7518dd4357a0"]
+  subnet_id              = "subnet-03bc7422d699ff7b4"
   tags = {
     Name = var.instance_names[count.index]
   }
